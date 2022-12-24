@@ -18,7 +18,7 @@ if(!loginId.equals("")) {
 <!DOCTYPE html>
 
 <html lang="ko">
-<!--로그인 회원가입 기능 디자인  -->
+<!--로그인 회원가입 기능  2개 첨부된 디자인 -->
 <head>
 	<style>
 		@charset "UTF-8";
