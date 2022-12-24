@@ -37,11 +37,10 @@ if(!loginId.equals("")) {
 		#header {
 			/*  background-color:lightgrey; */
 			 height:170px;
-			 background-color:black;
 			 width:1920px;
 		}
 		#nav {
-			 /* background-color:#393939; */
+			/*  background-color:#393939; */
 			 color: red;
 			 height:50px;
 			 /* float: left; */
@@ -63,8 +62,7 @@ if(!loginId.equals("")) {
 		}
 		* {	
 			font-family: Verdana;
-		    margin: 100;
-		    padding: 1000;
+		    margin: 100;  
 		    
 		}
 		.join_blank {

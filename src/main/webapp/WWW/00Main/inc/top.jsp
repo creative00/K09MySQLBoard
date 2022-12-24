@@ -11,8 +11,8 @@
 	}
 	.dropdown-menu {
 		padding: 100px;
-		width: 170pxx;
-		height: 600px;
+		width: 250px;
+		height: 400px;
 	}
 	.dropdown-item {
 		font-size: 30px;
