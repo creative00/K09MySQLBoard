@@ -127,7 +127,7 @@
             <tr>
                 <td class="userTit"><span class="c_imp"></span>  아이디</td>
                 <td class="userVal">
-                    <input type="text" name="id" value="" maxlength="12 class="userInput"
+                    <input type="text" name="user_id" value="" maxlength="12 class="userInput"
                         style="width:200px;" />                    
                     <button type="button" class="btn_search" onClick="">중복 확인</button>
                     <span style="margin-left:10px;"></span>
@@ -137,7 +137,7 @@
             <tr>
                 <td class="userTit"><span class="c_imp"></span>  비밀번호</td>
                 <td class="userVal">
-                    <input type="password" name="pass1" value="" style="width:200px;" class="userInput"
+                    <input type="password" name="user_pw"  value="" style="width:200px;" class="userInput"
                         maxlength="25" />
                 </td>
             </tr>
@@ -158,8 +158,8 @@
             <tr>
                 <td class="userTit"><span class="c_imp"></span>  성별</td>
                 <td class="userVal">
-                    <label><input type="radio" name="sex" value="male" checked />남자&nbsp;&nbsp;</label>
-                    <label><input type="radio" name="sex" value="female" />여자&nbsp;&nbsp;</label>
+                    <label><input type="radio" name="gender" value="male" checked />남자&nbsp;&nbsp;</label>
+                    <label><input type="radio" name="gender" value="female" />여자&nbsp;&nbsp;</label>
                     <span style="margin-left:20px;"></span>
                 </td>
             </tr>

@@ -199,7 +199,7 @@ public class MVCBoardDAO extends DBConnPool {
 		return result;
 	}
 	//게시글 데이터를 받아 DB에 저장되어있던 내용을 갱신한다.
-	//파일 업로드 지원
+	//파일 업로드 지
 	public int updatePost(MVCBoardDTO dto) { 
 		int result = 0; 
 		try { 

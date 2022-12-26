@@ -10,9 +10,10 @@
 		height: 100px;
 	}
 	.dropdown-menu {
-		padding: 100px;
-		width: 250px;
-		height: 400px;
+		text-align:center;
+		width: 270px;
+		height: 500px;
+		
 	}
 	.dropdown-item {
 		font-size: 30px;
