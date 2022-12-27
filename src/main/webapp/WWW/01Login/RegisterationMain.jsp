@@ -15,6 +15,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">  
     
     <title>Registration</title>
+    
+    
+    <script type="text/javascript">
+	function email_change(){
+	
+		if(document.myform.email.options[document.myform.email.selectedIndex].value == '0'){
+		/* 아래 주석 처리 */
+		//document.myform.email_domain.disabled = true;
+		document.myform.email_domain.value = "";	
+		}
+		
+		if(document.myform.email.options[document.myform.email.selectedIndex].value == '9'){
+			/* 아래 주석 처리 */
+		//document.myform.email_domain.disabled = false;
+		document.myform.email_domain.value = "";
+		document.myform.email_domain.focus();
+		} 
+		
+		else{
+			/* 아래 주석 처리 */
+		//document.myform.email_domain.disabled = true;
+		document.myform.email_domain.value = document.myform.email.options[document.myform.email.selectedIndex].value;
+		}
+	}
+	</script>
+
+
+    
     <style>
 	
 		
@@ -41,7 +69,6 @@
 		}
 		#footer {
 			/* background-color: green; */
-			height:120px;
 			clear:both;
 		}
 		#header,#nav, #footer, #section { text-align:center; }
@@ -67,8 +94,8 @@
 	</div> -->
 </body>
 <body>
-	<!--연결할 파일 경로 지정. 예를 들어 "./join_Action.jsp" -->
-	<form name="myform" action="./join_Action.jsp" method="POST" onsubmit="return formValidate();">
+	<!--연결할 파일 경로 지정. 예를 들어 "Join_Action.jsp" -->
+	<form name="myform" action="Join_Action.jsp" method="POST" onsubmit="return formValidate();">
         <style>
         *{font-family: Verdana, Geneva, Tahoma, sans-serif;  margin: 0px auto;}
 			;
@@ -103,17 +130,19 @@
             	
                 <td class="userTit" rowspan="2"><span class="c_imp"></span>  이메일 (필수)</td>
                 <td class="userVal">
-                    <input type="text" name="email1" value="" class="userInput w100" />
+                    <input type="text" name="email_id" value="" class="userInput w100"  onfocus="this.value='';"/>
                     <span style="font-size:16px;">＠</span>
-                    <input type="text" name="email2" value="" class="userInput w100" />
-                    <select name="email_domain" onchange="" class="userSelect w100">
-                        <option value=""> -- 선택 --</option>
+                    <input type="text" name="email_domain" value="" class="userInput w100" />
+                    
+                    <!--select 안의 name=email로 설정됨  -->
+                    <select name="email" title="이메일 도메인 주소 선택" onchange="email_change()" class="userSelect w100">
+                        <option value="0"> -- 선택 --</option>
                         <option value="naver.com">naver.com</option>
                         <option value="nate.com">nate.com</option>
                         <option value="gmail.com">gmail.com</option>
                         <option value="daum.net">daum.net</option>
                         <option value="hanmail.net">hanmail.net</option>
-                        <option value="직접입력" selected>직접 입력</option>
+                        <option value="9" selected>직접 입력</option>
                     </select>
                     <label><input type="radio" name="mailing" value="yes" checked /> 수신 허용&nbsp;&nbsp;&nbsp;</label>
                     <label><input type="radio" name="mailing" value="no" /> 수신 불가&nbsp;&nbsp;</label>
@@ -137,7 +166,7 @@
             <tr>
                 <td class="userTit"><span class="c_imp"></span>  비밀번호</td>
                 <td class="userVal">
-                    <input type="password" name="user_pw"  value="" style="width:200px;" class="userInput"
+                    <input type="password" name="user_pass"  value="" style="width:200px;" class="userInput"
                         maxlength="25" />
                 </td>
             </tr>

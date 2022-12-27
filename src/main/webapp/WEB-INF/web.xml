@@ -72,6 +72,26 @@
   	<param-value>1234</param-value>
   </context-param>
   
+  <!-- 프로젝트 로그인을 위한 www_db서버 연결주소  -->
+  <context-param>
+    <param-name>MySQLDriver1</param-name>
+    <param-value>org.mariadb.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>MySQLURL1</param-name>
+  	<param-value>jdbc:mariadb://localhost:3306/www_db</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>MySQLId1</param-name>
+  	<param-value>www</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>MySQLPwd1</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
+  
+  
+  
   <!--세션 유지시간 설정2: web.xml에서는 분단위로 지정 -->
   <session-config>
   	<session-timeout>35</session-timeout>

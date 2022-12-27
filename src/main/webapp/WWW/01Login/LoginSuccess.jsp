@@ -134,7 +134,7 @@ if(!loginId.equals("")) {
 <body>
 
 	<div id="header">
-		<%@ include file="../00Main/inc/top.jsp" %>
+		<%@ include file="../00Main/inc/toplogout.jsp" %>
 	</div>
 	<div id="nav"> </div>
 	<table border="0" >
@@ -147,77 +147,23 @@ if(!loginId.equals("")) {
 					<div class="join_container">
 					<!--로그인페이지 오류 -->
 			            
-						<%
 						
-						if (session.getAttribute("UserId") == null) {
-							//로그인 상태 확인 //로그아웃 상태
-						%>
-						<script>
-						function validateForm(form){
-							/*<form>태그 하위의 각 input 태그에 입력값이 있는지
-							확인하여 만약 빈값이라면 경고창, 포커스 이동, 폼값전송취소
-							처리를 한다.*/
-							if(!form.user_id.value){
-								alert("아이디를 입력하세요.");
-								form.user_id.focus();
-								return false;
-							}
-							if(form.user_pass.value == ""){
-								alert("패스워드를 입력하세요.");
-								form.user_pass.focus();
-								return false;
-							}
-						}
-						</script>
-						<!--로그인페이지 오류 -->
-				        <form method="post" action="LoginProcess.jsp" name="loginFrm" onsubmit="return validateForm(this);">
-				            <h3>로그인 <span style="color: red; font-size: 0.8em;">
-							<%= request.getAttribute("LoginErrMsg") == null ?
-									"" : request.getAttribute("LoginErrMsg") %>
-							</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-				            
+				        <form method="post" action="" name="loginFrm" >
+				            <h3>로그인에 성공하셨습니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+				            <div>
+				            <h2><%= session.getAttribute("UserName") %> 회원님, 환영합니다.</h2><br/>
+							
 				            <div class="login_id">
-				                <input type="text" class="input" style="ime-mode:disabled;" placeholder="아이디" name="user_id" value="<%= loginId %>" title="이메일을 입력해주세요" maxlength="20">
-				            	&nbsp;&nbsp;
-				            	<input type="checkbox" name="save_check" value="Y" <%= cookieCheck %> tabindex="3"/>
-							ID 저장하기
-							<br />
+				            
 				            </div>
-				            <!--비번  -->
-				            <div class="user_pw">
-				                <input type="password" class="input" placeholder="비밀번호를 잊으셨습니까?" name="user_pass" title="비밀번호" maxlength="20">
-				            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				            </div><br />		
-							<button class="btn-join" type="submit"  value="로그인"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그인
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-				            <!-- <input type="submit" class="bt_join;" value="로그인"> -->
-				        </form>
-				        <%
-						} else { //로그인된 상태
-						%>
-						<!--session영역에 저장된 속성값이 있다면 로그인 된 상태이므로
-						회원 정보 및 로그아웃 버튼을 화면에 출력  -->
-							<h2><%= session.getAttribute("UserName") %> 회원님,<br/><br/><br/><br/>환영합니다.</h2><br/>
-							<a href="Logout.jsp">[로그아웃]</a>
-						<%
-						}
-						%>
-	    			</div>
-				</td>
-				<td>
-					<div class="join_container">
-				        <form method="post" action="RegisterationMain.jsp" >
-				            <h3>등록&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-				            <div class="information" >
-				                 <br/>Vert의 회원으로 가입하시면 빠르고 편리하게 이용하실 수 있습니다.<br/><br />아직 회원이 아니시라면 이메일로 간편 가입하실 수 있습니다.<br/>
+						<button class="btn-join" style="background-color:#4cef7d; color:#666666"type="submit" value="로그아웃" action="Logout.jsp" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Logout.jsp">로그아웃</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;</button>
 				            </div>
-				            <br/><br/><br/>
-				           		
-							<button class="btn-join" style="background-color:#4cef7d;" onclick="location.href='02Register/RegisterationMain.jsp'" type="submit" value="회원가입" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원가입
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
 				        </form>
 	    			</div>
 				</td>
+				
 			</tr>
 		</div>
 	</table>

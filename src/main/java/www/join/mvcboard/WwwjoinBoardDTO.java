@@ -4,7 +4,7 @@ public class WwwjoinBoardDTO {
 	
 	private String email_id;
 	private String email_domain;
-	private String email_domainselected;
+	
 	
 	private String user_id; //회원제이므로 작성자아이디
 	
@@ -16,6 +16,7 @@ public class WwwjoinBoardDTO {
 	
 	private String mobile1;
 	private String mobile2;
+	private String mobile3;
 	
 	public String getEmail_id() {
 		return email_id;
@@ -29,12 +30,7 @@ public class WwwjoinBoardDTO {
 	public void setEmail_domain(String email_domain) {
 		this.email_domain = email_domain;
 	}
-	public String getEmail_domainselected() {
-		return email_domainselected;
-	}
-	public void setEmail_domainselected(String email_domainselected) {
-		this.email_domainselected = email_domainselected;
-	}
+	
 	public String getUser_id() {
 		return user_id;
 	}
@@ -83,9 +79,4 @@ public class WwwjoinBoardDTO {
 	public void setMobile3(String mobile3) {
 		this.mobile3 = mobile3;
 	}
-	private String mobile3;
-	
-	
-	
-	
 }	
