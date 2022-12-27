@@ -80,7 +80,7 @@
 		</div> -->
 		<!-- 로그인 버튼  -->
 		<div class="navbar-nav ms-auto col-sm-2">
-			<a class="nav-link" href="#" color="#666666" onclick="location.href='http://localhost:8585/K09MySQLBoard/WWW/01Login/LoginMain.jsp';"><i class='bi bi-person'
+			<a class="nav-link" href="#" color="#666666" onclick="location.href='./LoginMain.jsp';"><i class='bi bi-person'
                         style='font-size:20px'></i> Login </a>
 		</div>
        <!--  <ul class="navbar-nav1 ms-auto col-sm-3">

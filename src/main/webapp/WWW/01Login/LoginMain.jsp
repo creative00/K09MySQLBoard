@@ -169,6 +169,8 @@ if(!loginId.equals("")) {
 							}
 						}
 						</script>
+						
+						
 						<!--로그인페이지 오류 -->
 				        <form method="post" action="LoginProcess.jsp" name="loginFrm" onsubmit="return validateForm(this);">
 				            <h3>로그인 <span style="color: red; font-size: 0.8em;">

@@ -83,7 +83,8 @@
 			<!-- <button class="btn-join" style="background-color:#4cef7d; color:#666666"type="submit" value="로그아웃" action="Logout.jsp" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Logout.jsp">로그아웃</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
-			<a class="nav-link" href="#" color="#666666" onclick="LoginMain.jsp"><a href="Logout.jsp">로그아웃</a><i class="bi bi-box-arrow-right"></i>Logout</a>
+			<i class='bi bi-box-arrow-right' href="#" color="#666666" action="LoginMain.jsp" style='font-size:20px'></i><button class="btn" type="submit" onclick="location.href='./Logout.jsp';">Logout!</button>
+			
 		</div>
        <!--  <ul class="navbar-nav1 ms-auto col-sm-3">
             <li class="nav-item">

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,16 +48,16 @@
 		#header,#nav, #footer, #section { text-align:center; }
 		#section {line-height : 240px;}
 		.nav-item1 {
-			width: 300px;
+			width: 200px;
 		}
 		.nav-item2 {
-			width: 250px;
+			width: 270px;
 		}
 		.nav-item3 {
-			width: 250px;
+			width: 220px;
 		}
 		.nav-item4 {
-			width: 300px;
+			width: 220px;
 		}
 	</style>
 </head>
@@ -73,13 +74,13 @@
 		    	<li class="nav-item1">
 		    	</li>
 		    	<li class="nav-item3">
-					<a class="nav-link active" onclick="location.href='AboutBi.jsp';" style="font-size: 35px;" href="#">About</a>
+					<a class="nav-link" onclick="location.href='AboutBi.jsp';" style="font-size: 35px;" href="#">About</a>
 				</li>
 				<li class="nav-item2">
-					<a class="nav-link" style="font-size: 35px;" href="#">Location</a>
+					<a class="nav-link" style="font-size: 35px;" onclick="location.href='Location.jsp';"  href="#">Location</a>
 				</li>
 				<li class="nav-item4">
-				 	<a class="nav-link" onclick="location.href='Notice.html';"style="font-size: 35px;" href="#">Notice</a>
+				 	<a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a>
 		    </ul>
 	  	</div>
 	</nav>

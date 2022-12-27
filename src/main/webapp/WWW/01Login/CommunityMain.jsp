@@ -28,7 +28,7 @@
 			 width:1920px;
 		}
 		#nav {
-			 
+			 margin:40px;
 			 height:100px;
 			 /* float: left; */
 		}
@@ -45,19 +45,22 @@
 			clear:both;
 		}
 		#header,#nav, #footer, #section { text-align:center; }
-		#section {line-height : 240px;}
+		#section {line-height :240px;}
 		.nav-item1 {
-			width: 300px;
+			width: 200px;
 		}
 		.nav-item2 {
-			width: 250px;
+			width: 270px;
 		}
 		.nav-item3 {
-			width: 250px;
+			width: 220px;
 		}
 		.nav-item4 {
-			width: 300px;
+			width: 220px;
 		}
+		/* .nav-item5 {
+			width: 300px;
+		} */
 	</style>
 </head>
 
@@ -74,22 +77,27 @@
 		    <ul class="navbar-nav">
 		    	<li class="nav-item1">
 		    	</li>
-		    	<li class="nav-item3">
-					<a class="nav-link" onclick="location.href='AboutBi.jsp';" style="font-size: 35px;" href="#">About</a>
-				</li>
 				<li class="nav-item2">
-					<a class="nav-link active" style="font-size: 35px;" href="#">Location</a>
+					<a class="nav-link active" style="font-size: 32px;" href="#">Community</a>
+				</li>
+				<li class="nav-item3"> <a href="../mvcboard/list.do">
+					<a class="nav-link" onclick="location.href='QandA.html';" style="font-size: 32px;" href="#">Q & A</a>
 				</li>
 				<li class="nav-item4">
-				 	<a class="nav-link" onclick="location.href='Notice.html';"style="font-size: 35px;" href="#">Notice</a>
+				 	<a class="nav-link" onclick="location.href='Review.html';"style="font-size: 32px;" href="#">Review</a>
+				</li>
+				<!-- <li class="nav-item5">
+				 	<a class="nav-link disabled" style="font-size: 32px;" href="#">Disabled</a>
+				</li> -->
 		    </ul>
 	  	</div>
 	</nav>
-	<iframe src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.328365306549!2d-95.466655384541!3d29.739208539881275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16eeef3bdd1%3A0x7e03fa20d63c5caf!2z642UIOqwpOufrOumrOyVhA!5e0!3m2!1sko!2skr!4v1671785258052!5m2!1sko!2skr" width="1000" height="800" style="border:0;" allowfullscreen="" loading="lazy">
-	</iframe>
 	
+	</div>
 	<table border="0" >
-			
+		<a href="http://www.naver.com/" target="_blank">
+				<img src="../image/cloud.jpg" />
+		</a>
 		<div id="section">
 			
 		</div>
@@ -100,6 +108,7 @@
             		<br /><br />
                	<div class="text-center">
                    <!-- 각종 버튼 부분 -->
+                   
                    	<button type="button" onclick="location.href='https://instagram.com/le_rayon_vert_';" class="btn"><i class="bi bi-instagram"></i> IG</button>
                     <button type="button" class="btn" onclick="location.href='https://www.youtube.com/watch?v=_44OIAW-qRQ';"><i class="bi bi-youtube"></i> YOUTUBE</button>
                     <button type="button" class="btn"><i class="bi bi-shop"></i> NAVER </button>
@@ -128,5 +137,3 @@
 </body>
 
 </html>
-
-

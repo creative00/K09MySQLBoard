@@ -10,39 +10,36 @@
 <title>파일 첨부형 게시판 - 목록보기 (List)</title></head>
 <style>a{text-decoration:none;}</style>
 <body>
-	<h2>파일 첨부형 게시판-현재페이지:${map.pageNum } </h2>
-   
-    <form method="get">  
-    <table border="1" width="90%">
-    <tr>
-        <td align="center">
-            <select name="searchField"> 
-                <option value="title">제목</option> 
-                <option value="content">내용</option>
-            </select>
-            <input type="text" name="searchWord" />
-            <input type="submit" value="검색하기" />
-        </td>
-    </tr>   
-    </table>
-    </form>
+	
+   <h2> Review ${map.pageNum } </h2>
+   <table border="0" align="center" width="70%" style="border-top: solid 1px rgba(165, 165, 165, 165);">
     <!-- 목록 테이블(표)  -->
-    <table border="1" width="90%">
+    
+    
+   
+    <br />
+    <table border="0" align="center" width="70%" style="border-bottom: solid 1px rgba(165, 165, 165, 165);">
+     <br />
     	<!--각 칼럼의 이름  -->
         <tr>
             <th width="10%">번호</th>
             <th width="*">제목</th>
             <th width="15%">작성자</th>
-            <th width="10%">조회수</th>
-            <th width="15%">작성일</th>
-            <th width="8%">첨부</th>
+            <!-- <th width="10%">조회수</th> -->
+            <th width="20%">작성일</th>
+            <!-- <th width="8%">첨부</th> -->
         </tr>
+        <table border="0" align="center" width="70%" style="border-bottom: solid 1px rgba(165, 165, 165, 165);">
 <c:choose>
 	<c:when test="${ empty boardLists }">
 <!-- 게시물을 저장하고 있는 boardlists 컬렉션에 내용이 없다면 아래 부분을 출력한다. -->
 		<tr>
-			<td colspan="6" align="center">
+			 
+			<td colspan="6" align="center" style="border-top: rgba(165, 165, 165, 165); ">
+			
+				<br /><br />
 				등록된 게시물이 없습니다. *^^*
+				<br /><br /><br />
 			</td>
 		</tr>
 	</c:when>
@@ -87,17 +84,36 @@
 </c:choose>
     </table>
     
+    <form method="get">  
+    <table width="70%" align="center">
+    <tr>
+    	
+        <td align="center">
+        <br /> <br /> <br /> <br />
+            <select name="searchField"> 
+                <option value="title">제목</option> 
+                <option value="content">내용</option>
+                <option value="idx">번호</option>
+            </select>
+            <input type="text" name="searchWord" />
+            <input type="submit" value="검색하기" />
+		   
+        </td>
+    </tr>   
+    </table>
+    </form>
+    
     
     <!--목록 하단의 [글쓰기] 버튼 -->
-    <table border="1" width="90%">
-        <tr align="center">
+    <table border="0" width="70%" >
+        <tr>
             <td>
             	<!-- 컨트롤러(서블릿)에서 클래스 호출을 통해 
             	이미 페이지 번호가 문자열로 만들어져 있는 상태이므로
             	뷰(JSP)에서는 출력만 해주면 된다.  -->
                 ${ map.pagingImg }
             </td>
-            <td width="100"><button type="button"
+            <td width="100" align="right"><button type="button"
                 onclick="location.href='../mvcboard/write.do';">글쓰기</button>
             </td>
         </tr>

@@ -10,10 +10,17 @@
 <title>파일 첨부형 게시판 - 목록보기 (List)</title></head>
 <style>a{text-decoration:none;}</style>
 <body>
+
+
+	
 	<h2>파일 첨부형 게시판-현재페이지:${map.pageNum } </h2>
+   
+   
+   
    
     <form method="get">  
     <table border="1" width="90%">
+
     <tr>
         <td align="center">
             <select name="searchField"> 

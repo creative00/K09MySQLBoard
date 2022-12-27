@@ -45,7 +45,7 @@ EL을 이용하면 해당 과정 없이 param내장 객체로 즉시 값을 받�
 <input type="hidden" name="mode" value="${ param.mode }" />
 
 
-<table border="1" width="90%">
+<table border="1" align="center" width="50%">
     <tr>
         <td>비밀 번호</td>
         <td>

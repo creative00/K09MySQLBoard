@@ -14,7 +14,7 @@ String user_pass = request.getParameter("user_pass");
 String save_check = request.getParameter("save_check");
 
 //아이디, 패스워드의 일치 여부를 통해 로그인 성공, 실패를 판단한다.
-if ("testlala".equals(user_id)&& "1234".equals(user_pass)){
+if ( equals(user_id)&& equals(user_pass)){
 	//로그인에 성공하고...
 	if (save_check != null && save_check.equals("Y")) {
 		//아이디 저장하기에 체크한 경우라면 쿠키를 생성한다.

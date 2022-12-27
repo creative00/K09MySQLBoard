@@ -49,7 +49,9 @@
 1. method 
 -->
 <form name="writeFrm" method="post" enctype="multipart/form-data" 
+	
 	action="../mvcboard/write.do" onsubmit="return validateForm(this);">
+    <div class="row border border-dark border-bottom-0 border-right-0 border-left-0"></div>
     <table border="1" width="90%">
         <tr>
             <td>작성자</td>
