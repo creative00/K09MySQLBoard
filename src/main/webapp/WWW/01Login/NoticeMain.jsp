@@ -80,10 +80,12 @@
 					<a class="nav-link" style="font-size: 35px;" onclick="location.href='Location.jsp';"  href="#">Location</a>
 				</li>
 				<li class="nav-item4">
+					<!-- <a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a> -->
 				 	<a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a>
 		    </ul>
 	  	</div>
 	</nav>
+	<a href="../noticeboard/list.do">게시판목록바로가기</a>
 	<div id="nav">
 	</div>
 	<table border="0" >

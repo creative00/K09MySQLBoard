@@ -1,4 +1,4 @@
-package www.join.mvcboard;
+package www.join;
 
 import java.sql.PreparedStatement;
 

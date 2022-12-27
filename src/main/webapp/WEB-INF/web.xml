@@ -202,10 +202,34 @@
 	 <servlet-name>MVCBoardWrite</servlet-name>
 	 <url-pattern>/mvcboard/write.do</url-pattern>
    </servlet-mapping>
+
 	<!-- 파일 첨부 시 제한 용량은 1메가로 지정  -->
    <context-param>
 	 <param-name>maxPostSize</param-name>
 	 <param-value>1024000</param-value>
    </context-param>
 
+<!--!!!!!!!!프로젝트 위한 서블릿 설정..!!!!!!!!!!!!!!!!!!  -->
+<!-- Model2 방식의 자료실형 게시판 구현하기  -->
+  <!-- 리스트(목록) 서블릿 매핑 -->
+  <servlet>
+  	<servlet-name>NOTICEBoardList</servlet-name>
+  	<servlet-class>www.noticeboard.ListController0</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NOTICEBoardList</servlet-name>
+  	<url-pattern>/noticeboard/list.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 글쓰기로 진입하기 위한 매핑  -->
+  <!--예제14-9  -->
+  
+  <servlet>
+  	<servlet-name>NOTICEBoardWrite</servlet-name>
+  	<servlet-class>www.noticeboard.WriteController0</servlet-class>
+   </servlet>
+   <servlet-mapping>
+	 <servlet-name>NOTICEBoardWrite</servlet-name>
+	 <url-pattern>/noticeboard/write.do</url-pattern>
+   </servlet-mapping>
 </web-app>

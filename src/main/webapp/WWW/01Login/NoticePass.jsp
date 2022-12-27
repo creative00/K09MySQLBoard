@@ -145,20 +145,20 @@ EL을 이용하면 해당 과정 없이 param내장 객체로 즉시 값을 받�
 
 <table border="3" align="center" width="30%"  style="font-size:23px">
     <tr>
-        <td>비밀 번호</td>
         <td>
-            <input type="password" name="pass" style="width:200px;" />
-            
+        <div type="text" style="background-color:lightgrey;font:white;padding:8px" />&nbsp;&nbsp;비밀 번호</div>
+        <td>
+            <input type="password"  name="pass" style="width:180px;" />
+            <button style="background-color:#4cef7d; border:0;font-size:18px; padding:8px" type="submit" >검증하기</button>
         </td>
         
     </tr>
     <tr>
         <td colspan="2" align="center">
-        	<br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button style="background-color:#4cef7d; border:0;" type="submit" >검증하기</button>
-            <button type="reset" style="background-color:#4cef7d;border:0;">RESET</button>
-            <button type="button" style="background-color:#4cef7d;border:0;" onclick="location.href='../mvcboard/list.do';">
-                목록 바로 보기</button>
+        	<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="reset" style="background-color:#4cef7d;border:0;font-size:18px;padding:10px">&nbsp;&nbsp;RESET&nbsp;&nbsp;</button>
+            <button type="button" style="background-color:#4cef7d;border:0;font-size:18px;padding:10px" onclick="location.href='../mvcboard/list.do';">
+             &nbsp;&nbsp;목록 바로 보기&nbsp;</button>
         </td>
     </tr>
 </table>

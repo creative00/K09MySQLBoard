@@ -1,5 +1,5 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="www.join.mvcboard.WwwjoinBoardDAO"%>
+<%@page import="www.join.WwwjoinBoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%

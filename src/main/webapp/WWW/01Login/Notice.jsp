@@ -158,7 +158,7 @@
 		            <!-- 제목  -->
 		            <td align="left"> 
 		            <!-- 제목을 클릭할 경우 내용보기 페이지로 이동 -->
-			            <a href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }</a>
+			            <a href="./www/noticeboard/view.do?idx=${ row.idx }">${ row.title }</a>
 			       
 		            </td>
 		            <td>${ row.name }</td>
@@ -168,7 +168,7 @@
 		          	<!-- 첨부파일의 경우 필수사항 아니라 테이블 생성 시 not null조건이 적영되어 있지않다.
 		          	따라서 첨부파일이 있을 때만 다운로드 링크를 출력한다. -->
 		          	<c:if test="${ not empty row.ofile }">
-		          	<a href="../mvcboard/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }">[Down]</a>
+		          	<a href="./www/noticeboard/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }">[Down]</a>
 		          	</c:if>
 		          	</td>
 	        </tr>
@@ -207,7 +207,7 @@
 	                ${ map.pagingImg }
 	            </td>
 	            <td width="100" align="right"><button type="button"
-	                onclick="location.href='../01Login/write.do';">글쓰기</button>
+	                onclick="location.href='./www/noticeboard/write.do';">글쓰기</button>
 	            </td>
 	        </tr>
 	    </table>
