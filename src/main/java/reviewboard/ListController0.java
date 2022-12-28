@@ -1,4 +1,4 @@
-package www.noticeboard;
+package reviewboard;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ public class ListController0 extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//DAO객체 생성 통해 커넥션풀로 DB에 연결한다.
-		NoticeBoardDAO dao = new NoticeBoardDAO();
+		ReviewBoardDAO dao = new ReviewBoardDAO();
 		
 		//Model(데이터베이스), View(JSP페이지)로 파라미터 및 데이터를
 		//전달하기 위해 생성한다.
@@ -68,7 +68,7 @@ public class ListController0 extends HttpServlet {
 		/* 페이지 처리 end */
 		
 		//현재 페이지에 출력할 게시물을 select한다.
-		List<NoticeBoardDTO> boardLists = dao.selectListPage(map);
+		List<ReviewBoardDTO> boardLists = dao.selectListPage(map);
 		//커넥션풀에 자원 반납
 		dao.close();
 		//페이지 번호를 생성하기 위한 유틸리티 클래스의 메서드 호출

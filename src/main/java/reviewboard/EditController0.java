@@ -1,4 +1,4 @@
-package www.noticeboard;
+package reviewboard;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,8 +28,8 @@ public class EditController0 extends HttpServlet {
 			throws ServletException, IOException {
 		//수정페이지로 전달된 일련번호를 통해 게시물을 인출한다.
 		String idx = req.getParameter("idx");
-		NoticeBoardDAO dao = new NoticeBoardDAO();
-		NoticeBoardDTO dto = dao.selectView(idx);
+		ReviewBoardDAO dao = new ReviewBoardDAO();
+		ReviewBoardDTO dto = dao.selectView(idx);
 		//인출된 내용은 request영역에 저장한 후 View로 포워드한다.
 		req.setAttribute("dto", dto);
 		req.getRequestDispatcher("/WWW/01Login/NoticeEdit.jsp").forward(req, resp);
@@ -71,7 +71,7 @@ public class EditController0 extends HttpServlet {
 		String pass = (String)session.getAttribute("pass");
 		
 		//DTO에 데이터 저장
-		NoticeBoardDTO dto = new NoticeBoardDTO();
+		ReviewBoardDTO dto = new ReviewBoardDTO();
 		dto.setIdx(idx);
 		dto.setName(name);
 		dto.setTitle(title);
@@ -105,7 +105,7 @@ public class EditController0 extends HttpServlet {
 			dto.setSfile(prevSfile);
 		}
 		//DB 연결 및 업데이트 처리
-		NoticeBoardDAO dao = new NoticeBoardDAO();
+		ReviewBoardDAO dao = new ReviewBoardDAO();
 		int result = dao.updatePost(dto);
 		dao.close();
 		

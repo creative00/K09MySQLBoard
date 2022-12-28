@@ -84,7 +84,7 @@
 					<a class="nav-link" onclick="location.href='QandA.html';" style="font-size: 32px;" href="#">Q & A</a>
 				</li>
 				<li class="nav-item4">
-				 	<a class="nav-link" onclick="location.href='Review.html';"style="font-size: 32px;" href="#">Review</a>
+				 	<a class="nav-link" onclick="location.href='./reviewboard/list.do';" style="font-size: 32px;" href="#">Review</a>
 				</li>
 				<!-- <li class="nav-item5">
 				 	<a class="nav-link disabled" style="font-size: 32px;" href="#">Disabled</a>

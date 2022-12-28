@@ -1,23 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">  
-    
-    <script type="text/javascript">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">  
+
+<script type="text/javascript">
 /* 패스워드 검증을 통해 수정페이지로 진입하므로 해당 페이지에서는
  추가로 패스워드를 입력하지 않는다.
  */
@@ -39,7 +38,7 @@
 			return false;
 		}
 	}
-	</script>  
+</script>  
 	<body>
 		<style>
 			* {	
@@ -125,7 +124,7 @@
 	<!-- 글쓰기 페이지를 그대로 사용하되 action 부분만 수정한다.
 	수정 시에도 파일 첨부가 있으므로 entype속성은 추가되어야 한다.  -->
 	<form name="writeFrm" method="post" enctype ="multipart/form-data"
-	action="/WWW/01Login/www.noticeboard/edit.do" onsubmit="return validateForm(this);" >
+	action="./edit.do" onsubmit="return validateForm(this);" >
 	<!--게시물 수정 위한 일련번호  -->
 	<input type="hid-den" name="idx" value="${ dto.idx }"/>
 	<!-- 기존의 원본파일명 -->

@@ -131,7 +131,7 @@
 		
 		action="../www.noticeboard/write.do" onsubmit="return validateForm(this);">
 	    
-	    <table style="border-bottom: solid 1px rgba(165, 165, 165, 165);" border="1" width="30%" align="center" padding="100px" margin="20px">
+	    <table style="border-bottom: solid 1px rgba(165, 165, 165, 165);" border="1" width="60%" align="center" padding="100px" margin="20px">
 	        <tr>
 	            <td> 작성자</td>
 	            <td>
