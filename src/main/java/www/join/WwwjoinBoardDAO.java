@@ -1,9 +1,13 @@
 package www.join;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import common.DBConnPool;
 import common.DBConnPool1;
+import common.JDBConnect1;
 
 public class WwwjoinBoardDAO extends DBConnPool1 {
 	public WwwjoinBoardDAO() {
@@ -38,5 +42,62 @@ public class WwwjoinBoardDAO extends DBConnPool1 {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	/**
+	 * 아이디 중복체크를 한다.
+	 * @param id 아이디
+	 * @return x : 아이디 중복여부 확인값
+	 */
+//	public boolean duplicateIdCheck(String user_id)
+//	{
+//		Connection conn = null;
+//		PreparedStatement pstm = null;
+//		ResultSet rs = null;
+//		boolean x= false;
+//		
+//		try {
+//			// 쿼리
+//			StringBuffer query = new StringBuffer();
+//			query.append("Select user_id from registeration where user_id;");
+//						
+//			conn = DBConnPool1.getConnection();
+//			pstm = conn.prepareStatement(query.toString());
+//			pstm.setString(1, user_id);
+//			rs = pstm.executeQuery();
+//			
+//			if(rs.next()) x= true; //해당 아이디 존재
+//			
+//			return x;
+//			
+//		} catch (Exception sqle) {
+//			throw new RuntimeException(sqle.getMessage());
+//		} finally {
+//			try{
+//				if ( pstm != null ){ pstm.close(); pstm=null; }
+//				if ( conn != null ){ conn.close(); conn=null;	}
+//			}catch(Exception e){
+//				throw new RuntimeException(e.getMessage());
+//			}
+//		}
+//	} // end duplicateIdCheck()
+	
+//내가 만든 쿼리문	
+	public boolean duplicateIdCheck(String user_id) {
+		boolean x = true;
+		try {
+			String sql = "Select user_id from registeration where user_id;";
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			rs = psmt.executeQuery();
+			rs.next();
+			if (rs.getInt(1) == 0) {
+				x = false;
+			}
+		}
+		catch (Exception e) {
+			x = false;
+			e.printStackTrace();
+		}
+		return x;
 	}
 }

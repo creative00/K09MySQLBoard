@@ -18,6 +18,50 @@
     
     
     <script type="text/javascript">
+    
+	
+	function openIdChk(){
+		
+		window.name = "parentForm";
+		window.open("IdCheckForm.jsp",
+				"chkForm", "width=500, height=300, resizable = no, scrollbars = no");	
+	}
+
+	// 아이디 입력창에 값 입력시 hidden에 idUncheck를 세팅한다.
+	// 이렇게 하는 이유는 중복체크 후 다시 아이디 창이 새로운 아이디를 입력했을 때
+	// 다시 중복체크를 하도록 한다.
+	function inputIdChk(){
+		document.myform.idDuplication.value ="idUncheck";
+	}
+
+    
+    /* function checkValue () {
+    	var form = document.myform;
+    	
+    	
+    	if(!form.user_id.value){
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+    	if(!form.idDuplication.value != "idCheck"){
+			alert("아이디 중복체크를 해주세요.");
+			return false;
+		}
+		
+		if(form.user_pass.value == ""){
+			alert("패스워드를 입력하세요.");
+			return false;
+		}
+		if(form.user_pass.value != form.pass2.value){
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+		if(!form.name.value){
+			alert("이름을 제대로 입력하세요.");
+			return false;
+		}
+    } */
+   
 	function email_change(){
 	
 		if(document.myform.email.options[document.myform.email.selectedIndex].value == '0'){
@@ -40,9 +84,6 @@
 		}
 	}
 	</script>
-
-
-    
     <style>
 	
 		
@@ -156,9 +197,10 @@
             <tr>
                 <td class="userTit"><span class="c_imp"></span>  아이디</td>
                 <td class="userVal">
-                    <input type="text" name="user_id" value="" maxlength="12 class="userInput"
-                        style="width:200px;" />                    
-                    <button type="button" class="btn_search" onClick="">중복 확인</button>
+                    <input type="text" name="user_id" value="" maxlength="12" class="userInput"
+                        onkeydown="inputIdChk()" style="width:200px;" />                    
+                    <button type="button" class="btn_search" onclick="openIdChk()">중복 확인</button>
+                    <input type="hid=den" name="idDuplication" value="idUncheck"/>
                     <span style="margin-left:10px;"></span>
                     <span style="color:#888888;">+ 4~15자, 첫 영문자, 영문자와 숫자 조합</span>
                 </td>
