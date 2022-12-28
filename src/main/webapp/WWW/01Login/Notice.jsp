@@ -83,7 +83,7 @@
 <body>
 
 	<!--연결할 파일 경로 지정. 예를 들어 "./join_Action.jsp" -->
-	<form name="myform" action="./Join_Action.jsp" method="POST" >
+	<form name="myform" action="" method="POST" >
        
        
         <table class="userTable">
@@ -96,16 +96,13 @@
             </colgroup>
             <tr>
             	<div class="title" style="font-size: 50px; color:grey; text-align: center; margin:80px;">공지사항
-         	
             	</div>
             </tr>
-			           
-          
         </table>
        
-	   <table border="0" align="center" width="70%" style="border-top: solid 1px rgba(165, 165, 165, 165);">
-			 <h2> Review!! ${map.pageNum } </h2>
-	   </table>
+	   <%-- <table border="0" align="center" width="70%" style="border-top: solid 1px rgba(165, 165, 165, 165);">
+			 <h2>${map.pageNum}</h2>
+	   </table> --%>
 	    <!-- 목록 테이블(표)  -->
 	    
 	    
@@ -115,72 +112,83 @@
 	     <br />
 	    	<!--각 칼럼의 이름  -->
 	        <tr>
-	            <th width="10%">번호</th>
+	            <th width="10%">&nbsp;&nbsp;&nbsp;&nbsp;번호</th>
 	            <th width="*">제목</th>
-	            <th width="15%">작성자</th>
-	            <!-- <th width="10%">조회수</th> -->
-	            <th width="20%">작성일</th>
+	            <th width="17%">&nbsp;&nbsp;&nbsp;작성자</th>
+	            <th width="11%">조회수</th>
+	            <th width="17%">작성일</th>
 	            <!-- <th width="8%">첨부</th> -->
 	        </tr>
-	        <table border="0" align="center" width="70%" style="border-bottom: solid 1px rgba(165, 165, 165, 165);">
-	<c:choose>
-		<c:when test="${ empty boardLists }">
-	<!-- 게시물을 저장하고 있는 boardlists 컬렉션에 내용이 없다면 아래 부분을 출력한다. -->
-			<tr>
-				 
-				<td colspan="6" align="center" style="border-top: rgba(165, 165, 165, 165); ">
-				
-					<br /><br />
-					등록된 게시물이 없습니다. *^^*
-					<br /><br /><br />
-				</td>
-			</tr>
-		</c:when>
-		<c:otherwise>
-		<!-- 게시물이 있을 때 컬렉션에 저장된 목록의 갯수만큼 반복한다.  -->
-			<c:forEach items="${ boardLists }" var="row" varStatus="loop">
-				<!--
-				가상번호 계산하기
-				=> 전체 게시물 갯수 - (((페이지번호 -1) * 페이지 당 게시물 수) + 해당 루프의 index)
-				참고로 varStatus 속성의 index는 0부터 시작한다.
-					
-					전체 게시물의 갯수가 5개이고 페이지 당 2개씩만 출력한다면..
-					1페이지의 첫번째 게시물 번호 : 5 - (((1-1)*2) + 0) = 5
-					2페이지의 첫번째 게시물 번호 : 5 - (((2-1)*2) + 0) = 3
-				-->
-				
-				<tr align="center">
-	        	<!-- 게시물의 가상 번호  -->
-		            <td>
-		            	${ map.totalCount - (((map.pageNum-1) * map.pageSize)
-		            		+ loop.index)}
-					</td>  
-		            <!-- 제목  -->
-		            <td align="left"> 
-		            <!-- 제목을 클릭할 경우 내용보기 페이지로 이동 -->
-			            <a href="./www/noticeboard/view.do?idx=${ row.idx }">${ row.title }</a>
-			       
-		            </td>
-		            <td>${ row.name }</td>
-		            <td>${ row.visitcount }</td>
-		            <td>${ row.postdate }</td>
-		          	<td>
-		          	<!-- 첨부파일의 경우 필수사항 아니라 테이블 생성 시 not null조건이 적영되어 있지않다.
-		          	따라서 첨부파일이 있을 때만 다운로드 링크를 출력한다. -->
-		          	<c:if test="${ not empty row.ofile }">
-		          	<a href="./www/noticeboard/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }">[Down]</a>
-		          	</c:if>
-		          	</td>
-	        </tr>
-			</c:forEach>
-		</c:otherwise>
-	</c:choose>
+	       	<table border="0" align="center" width="70%" style="border-bottom: solid 1px rgba(165, 165, 165, 165);">
+			<c:choose>
+				<c:when test="${ empty boardLists }">
+			<!-- 게시물을 저장하고 있는 boardlists 컬렉션에 내용이 없다면 아래 부분을 출력한다. -->
+					<tr>
+						 
+						<td colspan="6" align="center" style="border-top: rgba(165, 165, 165, 165); ">
+						
+							<br /><br />
+							등록된 게시물이 없습니다. *^^*
+							<br /><br /><br />
+						</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+				<!-- 게시물이 있을 때 컬렉션에 저장된 목록의 갯수만큼 반복한다.  -->
+					<c:forEach items="${ boardLists }" var="row" varStatus="loop">
+						<!--
+						가상번호 계산하기
+						=> 전체 게시물 갯수 - (((페이지번호 -1) * 페이지 당 게시물 수) + 해당 루프의 index)
+						참고로 varStatus 속성의 index는 0부터 시작한다.
+							
+							전체 게시물의 갯수가 5개이고 페이지 당 2개씩만 출력한다면..
+							1페이지의 첫번째 게시물 번호 : 5 - (((1-1)*2) + 0) = 5
+							2페이지의 첫번째 게시물 번호 : 5 - (((2-1)*2) + 0) = 3
+						-->
+						<tr align="center">
+			        	<!-- 게시물의 가상 번호  -->
+				            <td>
+				            	${ map.totalCount - (((map.pageNum-1) * map.pageSize)
+				            		+ loop.index)}
+							</td>  
+				            <!-- 제목  -->
+				            <td align="left"> 
+				            <!-- 제목을 클릭할 경우 내용보기 페이지로 이동 -->
+					            <a href="../www.noticeboard/view.do?idx=${ row.idx }">${ row.title }</a>
+					       
+				            </td>
+				            <td>${ row.name }</td>
+				            <td>${ row.visitcount }</td>
+				            <td>${ row.postdate }</td>
+				          	<td>
+				          	<!-- 첨부파일의 경우 필수사항 아니라 테이블 생성 시 not null조건이 적영되어 있지않다.
+				          	따라서 첨부파일이 있을 때만 다운로드 링크를 출력한다. -->
+				          	<c:if test="${ not empty row.ofile }">
+				          	<a href="../www.noticeboard/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }">[Down]</a>
+				          	</c:if>
+				          	</td>
+			        </tr>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
 	    </table>
-	    
+	    <!--목록 하단의 [글쓰기] 버튼 -->
+	    <table border="0" width="70%" align="center">
+	        <tr align="center">
+	            <td>
+	            	<!-- 컨트롤러(서블릿)에서 클래스 호출을 통해 
+	            	이미 페이지 번호가 문자열로 만들어져 있는 상태이므로
+	            	뷰(JSP)에서는 출력만 해주면 된다.  -->
+	                ${ map.pagingImg }
+	            </td>
+	            <td width="100"><button type="button"
+	                onclick="location.href='../www.noticeboard/write.do';">글쓰기</button>
+	            </td>
+	        </tr>
+	    </table>
 	    <form method="get">  
 	    <table width="70%" align="center">
 	    <tr>
-	    	
 	        <td align="center">
 	        <br /> <br /> <br /> <br />
 	            <select name="searchField"> 
@@ -190,27 +198,15 @@
 	            </select>
 	            <input type="text" name="searchWord" />
 	            <input type="submit" value="검색하기" />
-			   
 	        </td>
 	    </tr>   
 	    </table>
 	    </form>
 	    
 	    
-	    <!--목록 하단의 [글쓰기] 버튼 -->
-	    <table border="0" width="70%" >
-	        <tr>
-	            <td>
-	            	<!-- 컨트롤러(서블릿)에서 클래스 호출을 통해 
-	            	이미 페이지 번호가 문자열로 만들어져 있는 상태이므로
-	            	뷰(JSP)에서는 출력만 해주면 된다.  -->
-	                ${ map.pagingImg }
-	            </td>
-	            <td width="100" align="right"><button type="button"
-	                onclick="location.href='./www/noticeboard/write.do';">글쓰기</button>
-	            </td>
-	        </tr>
-	    </table>
+	   
+	    
+	    
         
         <div id="nav">
         </div>      

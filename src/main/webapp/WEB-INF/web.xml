@@ -200,7 +200,7 @@
    </servlet>
    <servlet-mapping>
 	 <servlet-name>MVCBoardWrite</servlet-name>
-	 <url-pattern>/mvcboard/write.do</url-pattern>
+	 <url-pattern>/model2.mvcboard/write.do</url-pattern>
    </servlet-mapping>
 
 	<!-- 파일 첨부 시 제한 용량은 1메가로 지정  -->
@@ -218,7 +218,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>NOTICEBoardList</servlet-name>
-  	<url-pattern>/noticeboard/list.do</url-pattern>
+  	<url-pattern>/WWW/01Login/www.noticeboard/list.do</url-pattern>
   </servlet-mapping>
   
   <!-- 글쓰기로 진입하기 위한 매핑  -->
@@ -230,6 +230,6 @@
    </servlet>
    <servlet-mapping>
 	 <servlet-name>NOTICEBoardWrite</servlet-name>
-	 <url-pattern>/noticeboard/write.do</url-pattern>
+	 <url-pattern>/WWW/01Login/www.noticeboard/write.do</url-pattern>
    </servlet-mapping>
 </web-app>

@@ -100,7 +100,7 @@
 					<a class="nav-link" style="font-size: 35px;" onclick="location.href='Location.jsp';"  href="#">Location</a>
 				</li>
 				<li class="nav-item4">
-				 	<a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a>
+				 	<a class="nav-link active" onclick="location.href='./www.noticeboard/list.do';"style="font-size: 35px;" href="#">Notice</a>
 		    </ul>
 	  	</div>
 	</nav>
@@ -129,7 +129,7 @@
 -->
 	<form name="writeFrm" method="post" enctype="multipart/form-data" 
 		
-		action="../noticeboard/write.do" onsubmit="return validateForm(this);">
+		action="../www.noticeboard/write.do" onsubmit="return validateForm(this);">
 	    
 	    <table style="border-bottom: solid 1px rgba(165, 165, 165, 165);" border="1" width="30%" align="center" padding="100px" margin="20px">
 	        <tr>
@@ -168,7 +168,7 @@
 	            <td colspan="2" align="center">
 	                <button type="submit">작성 완료</button>
 	                <button type="reset">RESET</button>
-	                <button type="button" onclick="location.href='../noticeboard/list.do';">
+	                <button type="button" onclick="location.href='../www.noticeboard/list.do';">
 	                    목록 바로 보기</button>
 	            </td>
 	        </tr>

@@ -90,7 +90,7 @@
 					<a class="nav-link" style="font-size: 35px;" onclick="location.href='Location.jsp';"  href="#">Location</a>
 				</li>
 				<li class="nav-item4">
-				 	<a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a>
+				 	<a class="nav-link active" onclick="location.href='../www.noticeboard/list.do';"style="font-size: 35px;" href="#">Notice</a>
 		    </ul>
 	  	</div>
 	</nav>
@@ -105,16 +105,7 @@
 	</table>	
 </body>
 
-<body>
-	
 
-	<!--연결할 파일 경로 지정. 예를 들어 "./join_Action.jsp" -->
-	<form name="myform" action="./Join_Action.jsp" method="POST">
-	   <table border="0" align="center" width="70%" style="border-top: solid 1px rgba(165, 165, 165, 165);">
-	   </table>
-    </form>
-<body>
-	
 <!-- 
  파일 첨부를 위한 작성폼은 아래 2가지 조건이 지켜져야 한다.
  1.전송방식(method)sms post여야 한다.
@@ -127,7 +118,7 @@
 <!-- 글쓰기 페이지를 복사해 해당 페이지를 만들 때 비밀번호 검증 시에는
 첨부 파일이 필요 없으므로 enctype은 제거해야한다. 만약 제거하지 않으면 
 request내장 객체로 폼값을 받을 수 없으므로 주의해야 함  -->
-<form name="writeFrm" method="post" action="../mvcboard/pass.do"
+<form name="writeFrm" method="post" action="../www.noticeboard/pass.do"
 	onsubmit="return validateForm(this);">
 <!--
 해당 요청명으로 넘어온 파라미터는 컨트롤러에서 받은 후 
@@ -157,7 +148,7 @@ EL을 이용하면 해당 과정 없이 param내장 객체로 즉시 값을 받�
         <td colspan="2" align="center">
         	<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="reset" style="background-color:#4cef7d;border:0;font-size:18px;padding:10px">&nbsp;&nbsp;RESET&nbsp;&nbsp;</button>
-            <button type="button" style="background-color:#4cef7d;border:0;font-size:18px;padding:10px" onclick="location.href='../mvcboard/list.do';">
+            <button type="button" style="background-color:#4cef7d;border:0;font-size:18px;padding:10px" onclick="location.href='../www.noticeboard/list.do';">
              &nbsp;&nbsp;목록 바로 보기&nbsp;</button>
         </td>
     </tr>

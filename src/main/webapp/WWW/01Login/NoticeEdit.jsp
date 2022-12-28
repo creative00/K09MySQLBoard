@@ -40,52 +40,51 @@
 		}
 	}
 	</script>  
-<body>
-	<style>
-	
-		* {	
-			font-family: Verdana;
-		    margin: 100;
-		    padding: 1000;
-		    
-		}
-		#header {
-			/*  background-color:lightgrey; */
-			 height:170px;
-			 width:1920px;
-		}
-		#nav {
-			 
-			 height:100px;
-			 /* float: left; */
-		}
-		#section {
-			height:600;
-			text-align: left;
-			float: right;
-			background-color:red;
-			
-		}
-		#footer {
-			/* background-color: green; */
-			height:120px;
-			clear:both;
-		}
-		#header,#nav, #footer, #section { text-align:center; }
-		#section {line-height : 240px;}
-		.nav-item1 {
-			width: 200px;
-		}
-		.nav-item2 {
-			width: 270px;
-		}
-		.nav-item3 {
-			width: 220px;
-		}
-		.nav-item4 {
-			width: 220px;
-		}
-	</style>
+	<body>
+		<style>
+			* {	
+				font-family: Verdana;
+			    margin: 100;
+			    padding: 1000;
+			}
+			#header {
+				/*  background-color:lightgrey; */
+				 height:170px;
+				 width:1920px;
+			}
+			#nav {
+				 
+				 height:100px;
+				 /* float: left; */
+			}
+			#section {
+				height:600;
+				text-align: left;
+				float: right;
+				background-color:red;
+				
+			}
+			#footer {
+				/* background-color: green; */
+				height:120px;
+				clear:both;
+			}
+			#header,#nav, #footer, #section { text-align:center; }
+			#section {line-height : 240px;}
+			.nav-item1 {
+				width: 200px;
+			}
+			.nav-item2 {
+				width: 270px;
+			}
+			.nav-item3 {
+				width: 220px;
+			}
+			.nav-item4 {
+				width: 220px;
+			}
+		</style>
+	</body>
 </head>
 
 <body>
@@ -106,7 +105,7 @@
 					<a class="nav-link" style="font-size: 35px;" onclick="location.href='Location.jsp';"  href="#">Location</a>
 				</li>
 				<li class="nav-item4">
-				 	<a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a>
+				 	<a class="nav-link active" onclick="location.href='./www.noticeboard/list.do';"style="font-size: 35px;" href="#">Notice</a>
 		    </ul>
 	  	</div>
 	</nav>
@@ -120,13 +119,13 @@
 		</div>
 	</table>	
 
-
-
+<!--  -->
+<!-- action="../www.noticeboard/edit.do"  -->
 	<h2>파일 첨부형 게시판 - 수정하기(Edit)</h2>
 	<!-- 글쓰기 페이지를 그대로 사용하되 action 부분만 수정한다.
 	수정 시에도 파일 첨부가 있으므로 entype속성은 추가되어야 한다.  -->
 	<form name="writeFrm" method="post" enctype ="multipart/form-data"
-	action="../01Login/NoticeEdit.do" onsubmit="return validateForm(this);">
+	action="/WWW/01Login/www.noticeboard/edit.do" onsubmit="return validateForm(this);" >
 	<!--게시물 수정 위한 일련번호  -->
 	<input type="hid-den" name="idx" value="${ dto.idx }"/>
 	<!-- 기존의 원본파일명 -->
@@ -136,7 +135,7 @@
 	<!-- 해당 hidden값은 게시물 수정 시 첨부파일이 없는 경우 사용될 것이다.  -->
 	
 	
-	<table border="1" width="90%">
+	<table border="1" style="border-bottom: solid 1px rgba(165, 165, 165, 165);" width="50%" height="200px" align="center" padding="100px" margin="100px">
 		<tr>
 			<td>작성자</td>
 			<td>
@@ -154,7 +153,7 @@
 		<tr>
 			<td>내용</td>
 			<td>
-				<textarea name="content" style="width: 90%; height: 100px;">${ dto.content }</textarea>
+				<textarea name="content" style="width: 90%; height: 400px;">${ dto.content }</textarea>
 			</td>
 		</tr>
 		<tr>
@@ -168,17 +167,15 @@
 			<td colspan="2" align="center">
 				<button type="submit">작성 완료</button>
 				<button type="reset">RESET</button>
-				<button type="button" onclick="location.href='../01Login/Notice.do';">
+				<button type="button" onclick="location.href='./www.noticeboard/list.do';">
 					목록 바로가기
 				</button>
 			</td>
 		</tr>
 	</table>
 	</form>
-<body>
 
-</body>
-</html>
+
     <div id="nav">
 		<%@ include file="../00Main/inc/link.jsp" %>
 	</div>

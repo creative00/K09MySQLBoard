@@ -27,7 +27,7 @@ public class WriteController0 extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/14MVCBoard/Write.jsp")
+		req.getRequestDispatcher("/WWW/01Login/NoticeWrite.jsp")
 			.forward(req, resp);
 	}
 	
@@ -58,7 +58,7 @@ public class WriteController0 extends HttpServlet {
 		if (mr == null) {
 			//파일 업로드 실패
 			JSFunction.alertLocation(resp, "첨부 파일이 제한 용량을 초과합니다.", 
-									"../mvcboard/write.do");
+									"../www.noticeboard/write.do");
 			/*
 		 	객체가 생성되지 않아 업로드에 실패하면 나머지 폼값도 받을 수 없으므로
 		 	반드시 return 통해 실행을 중지시켜야 한다.
@@ -69,7 +69,7 @@ public class WriteController0 extends HttpServlet {
 		
 		//파일을 제외한 나머지 폼값을 받아 DTO객체에 저장한다.
 		//단 request내장객체가 아닌 mr통해 받아온다.
-		MVCBoardDTO dto = new MVCBoardDTO();
+		NoticeBoardDTO dto = new NoticeBoardDTO();
 		dto.setName(mr.getParameter("name"));
 		dto.setTitle(mr.getParameter("title"));
 		dto.setContent(mr.getParameter("content"));
@@ -95,7 +95,7 @@ public class WriteController0 extends HttpServlet {
 			dto.setSfile(newFileName);
 		}
 		//새로운 게시물을 테이블에 입력한다.
-		MVCBoardDAO dao = new MVCBoardDAO();
+		NoticeBoardDAO dao = new NoticeBoardDAO();
 		int result = dao.insertWrite(dto);
 		//커넥션풀 자원반납
 		dao.close();
@@ -103,10 +103,10 @@ public class WriteController0 extends HttpServlet {
 		//서블릿에서 특정 요청명으로 이동 시 sendRedirect()를 사용하면 됨
 		if ( result == 1) {
 			//insert에 성공하면 리스트로 이동한다.
-			resp.sendRedirect("../mvcboard/list.do");
+			resp.sendRedirect("../www.noticeboard/list.do");
 		}
 		else {
-			resp.sendRedirect("../mvcboard/write.do");
+			resp.sendRedirect("../www.noticeboard/write.do");
 		}
 	}
 }

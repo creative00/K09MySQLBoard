@@ -81,12 +81,13 @@
 				</li>
 				<li class="nav-item4">
 					<!-- <a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a> -->
-				 	<a class="nav-link active" onclick="location.href='Notice.jsp';"style="font-size: 35px;" href="#">Notice</a>
+				 	<a class="nav-link active" onclick="location.href='./www.noticeboard/list.do';"style="font-size: 35px;" href="#">Notice</a>
 		    </ul>
 	  	</div>
 	</nav>
-	<a href="../noticeboard/list.do">게시판목록바로가기</a>
-	<div id="nav">
+	<!--원 기본 페이지에서의 게시판 목록 -->
+	<!-- <a href="./www.noticeboard/list.do">게시판목록바로가기</a>
+	<div id="nav"> -->
 	</div>
 	<table border="0" >
 		
