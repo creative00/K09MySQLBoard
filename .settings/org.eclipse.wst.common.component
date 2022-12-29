@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="K09MySQLBoard">
+        
+    <wb-module deploy-name="Project_webpage">
+                
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="K09MySQLBoard"/>
-        <property name="java-output-path" value="/K09MySQLBoard/build/classes"/>
+                
+        <property name="java-output-path" value="/Project_webpage/build/classes"/>
+        <property name="context-root" value="Project_webpage"/>
+            
     </wb-module>
+    
 </project-modules>
